@@ -104,9 +104,9 @@ const mobileNavItems: NavItem[] = [
     icon: RiDashboardLine,
   },
   {
-    label: "Explore",
+    label: "Produk",
     href: "/product",
-    icon: RiMapLine,
+    icon: RiBox3Line,
   },
   {
     label: "Penjualan",
@@ -168,7 +168,6 @@ export default function Navbar() {
             LarisIn
           </Link>
         </div>
-        
 
         {/* Navigation */}
         <nav className="flex-1 space-y-5 overflow-y-auto px-3 pt-4">
