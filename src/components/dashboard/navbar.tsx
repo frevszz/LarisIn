@@ -36,6 +36,7 @@ import {
 import { Show, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { OriginButton } from "../ui/origin-button";
 import CreateNewDialog from "./create-new-dialog";
+import Image from "next/image";
 
 interface NavCategory {
   label: string;
@@ -162,7 +163,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between border-b border-gray-200 px-5">
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight text-gray-900 hover:text-blue-600 transition-colors"
+            className="text-xl no-copy font-bold tracking-tight text-gray-900 hover:text-blue-600 transition-colors border rounded-lg hard-shadow px-4 py-1"
           >
             LarisIn
           </Link>

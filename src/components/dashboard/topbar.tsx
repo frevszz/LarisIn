@@ -8,6 +8,8 @@ import {
   RiShieldCheckFill,
   RiStore2Line,
 } from "@remixicon/react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function TopbarDashboard() {
   const [open, setOpen] = useState(false);
@@ -46,8 +48,9 @@ export default function TopbarDashboard() {
 
   return (
     <section className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-gray-200 bg-white px-4 md:px-8">
-      <div className="flex items-center gap-3">
-      </div>
+      <Link href={"/"} className="flex items-center gap-3 visible md:invisible border rounded-xl hard-shadow">
+        <Image src={"/icon.svg"} alt={"icon"} width={40} height={40}/>
+      </Link>
 
       <div className="ml-auto flex items-center gap-3">
         <div className="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-gray-700">

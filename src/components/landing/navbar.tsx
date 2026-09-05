@@ -59,7 +59,7 @@ export default function NavbarLanding() {
         {/* LOGO */}
         <div className="flex items-center">
           <Link href="/">
-            <h1 className="text-2xl font-bold">LarisIn</h1>
+            <h1 className="text-2xl font-bold no-copy">LarisIn</h1>
           </Link>
         </div>
 

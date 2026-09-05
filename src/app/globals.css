@@ -140,6 +140,10 @@ body {
   transform: scaleY(-1);
 }
 
+.no-copy {
+  user-select: none;
+}
+
 .stamp {
   border: 2px solid #cd1c18;
   color: #cd1c18;
