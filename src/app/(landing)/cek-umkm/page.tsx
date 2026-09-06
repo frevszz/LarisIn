@@ -99,11 +99,10 @@ function UmkmCard({
     <article className="group bg-white border border-black rounded-2xl hard-shadow-static overflow-hidden flex flex-col h-full">
       <div className="flex items-center justify-between px-5 pt-4">
         <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500 border border-black/30 bg-slate-50 px-2 py-0.5 rounded">
-          {meta.code} · {String(index + 1).padStart(3, "0")}
+          {meta.label}
         </span>
-        <span className="flex items-center gap-1 text-xs font-mono bg-orange-300/25 text-[#1c1b17] font-semibold px-2 py-1 rounded border border-black/20">
-          <RiStarFill className="h-3 w-3 text-orange-300" />
-          {(umkm.rating || 5.0).toFixed(1)}
+        <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500 border border-black/30 bg-slate-50 px-2 py-0.5 rounded">
+          {String(index + 1).padStart(3, "0")}
         </span>
       </div>
 
