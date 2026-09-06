@@ -10,8 +10,6 @@ export default async function OrdersPage() {
   const { userId } = await auth();
   if (!userId) redirect("/sign-in");
 
-  // Penghitung pelanggan yang sudah dilayani kasir hari ini —
-  // sumber data "Total Pengunjung" di halaman Dashboard.
   const todayStart = new Date();
   todayStart.setHours(0, 0, 0, 0);
   const tomorrowStart = new Date(todayStart);

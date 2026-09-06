@@ -130,8 +130,6 @@ export default function Navbar() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!e.altKey) return;
 
-      // Alt + N: buka popup "Buat Baru" — kecuali di halaman yang
-      // punya pintasan Alt + N sendiri (Produk, Keuangan).
       if (e.key === "n") {
         e.preventDefault();
         if (
@@ -144,7 +142,6 @@ export default function Navbar() {
         return;
       }
 
-      // Alt + angka: lompat ke menu samping sesuai urutannya.
       const index = Number(e.key) - 1;
       const target = shortcutPages[index];
       if (target) {
@@ -293,12 +290,10 @@ export default function Navbar() {
         </ul>
       </nav>
 
-      {/* PopUp "Buat Baru" — produk */}
       <CreateNewDialog
         open={createOpen}
         onClose={() => setCreateOpen(false)}
         onSaveProduct={() => {
-          // Produk sudah disimpan ke API di dalam ProductForm.
           setCreateOpen(false);
         }}
       />
