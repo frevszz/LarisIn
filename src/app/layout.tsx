@@ -13,12 +13,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s",
-    default: "LarisIn - Sehat sehat UMKM",
+export const metadata = {
+  metadataBase: new URL("https://laris-in.vercel.app"), // Sesuaikan dengan domain / URL produksi utama Anda
+  title: "LarisIn — Platform POS & Manajemen UMKM",
+  description:
+    "LarisIn adalah aplikasi Point of Sale (POS) dan manajemen operasional untuk membantu UMKM mengelola penjualan, inventaris, dan transaksi dengan lebih efisien.",
+  openGraph: {
+    title: "LarisIn — Platform POS & Manajemen UMKM",
+    description:
+      "Kelola bisnis dan penjualan UMKM Anda lebih praktis dengan LarisIn. Nikmati fitur kasir modern, pencatatan transaksi, hingga manajemen stok.",
+    url: "https://laris-in.vercel.app/",
+    siteName: "LarisIn",
+    images: [
+      {
+        url: "/metadata/og-larisin.png",
+        width: 1200,
+        height: 630,
+        alt: "LarisIn - POS & Manajemen UMKM",
+      },
+    ],
+    type: "website",
   },
-  description: "anu mas",
+  twitter: {
+    card: "summary_large_image",
+    title: "LarisIn — Platform POS & Manajemen UMKM",
+    description:
+      "Solusi kasir digital dan manajemen usaha praktis untuk meningkatkan efisiensi bisnis UMKM Anda.",
+    images: ["/metadata/og-larisin.png"],
+  },
 };
 
 export default function RootLayout({
