@@ -90,55 +90,55 @@ Banyak pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) masih menghadapi pencatata
   <img src="public/screenshoot/landing.png" alt="Landing page LarisIn" width="500"/>
   <p><em>Landing page LarisIn</em></p>
 
-  <img src="public/screenshoot/loginSistem.png" alt="Halaman login sistem" width="800"/>
+  <img src="public/screenshoot/loginSistem.png" alt="Halaman login sistem" width="500"/>
   <p><em>Login sistem</em></p>
 
-  <img src="public/screenshoot/mainDashboard.png" alt="Dashboard utama" width="800"/>
+  <img src="public/screenshoot/mainDashboard.png" alt="Dashboard utama" width="500"/>
   <p><em>Dashboard utama</em></p>
 
-  <img src="public/screenshoot/mobileMenu.png" alt="Menu navigasi versi mobile" width="800"/>
+  <img src="public/screenshoot/mobileMenu.png" alt="Menu navigasi versi mobile" width="500"/>
   <p><em>Menu navigasi mobile</em></p>
 
-  <img src="public/screenshoot/formKasir.png" alt="Form kasir" width="800"/>
+  <img src="public/screenshoot/formKasir.png" alt="Form kasir" width="500"/>
   <p><em>Form kasir</em></p>
 
-  <img src="public/screenshoot/strukPembayaran.png" alt="Struk pembayaran" width="800"/>
+  <img src="public/screenshoot/strukPembayaran.png" alt="Struk pembayaran" width="500"/>
   <p><em>Struk pembayaran</em></p>
 
-  <img src="public/screenshoot/riwayatTransaksi.png" alt="Riwayat transaksi" width="800"/>
+  <img src="public/screenshoot/riwayatTransaksi.png" alt="Riwayat transaksi" width="500"/>
   <p><em>Riwayat transaksi</em></p>
 
-  <img src="public/screenshoot/listProduk.png" alt="Daftar produk" width="800"/>
+  <img src="public/screenshoot/listProduk.png" alt="Daftar produk" width="500"/>
   <p><em>Daftar produk</em></p>
 
-  <img src="public/screenshoot/tambahProduk.png" alt="Form tambah produk" width="800"/>
+  <img src="public/screenshoot/tambahProduk.png" alt="Form tambah produk" width="500"/>
   <p><em>Tambah produk</em></p>
 
-  <img src="public/screenshoot/editProduk.png" alt="Form edit produk" width="800"/>
+  <img src="public/screenshoot/editProduk.png" alt="Form edit produk" width="500"/>
   <p><em>Edit produk</em></p>
 
-  <img src="public/screenshoot/detailProduk.png" alt="Detail produk" width="800"/>
+  <img src="public/screenshoot/detailProduk.png" alt="Detail produk" width="500"/>
   <p><em>Detail produk</em></p>
 
-  <img src="public/screenshoot/keuangan.png" alt="Halaman keuangan" width="800"/>
+  <img src="public/screenshoot/keuangan.png" alt="Halaman keuangan" width="500"/>
   <p><em>Keuangan dan analytics</em></p>
 
-  <img src="public/screenshoot/tambahTransaksi.png" alt="Form tambah transaksi keuangan" width="800"/>
+  <img src="public/screenshoot/tambahTransaksi.png" alt="Form tambah transaksi keuangan" width="500"/>
   <p><em>Tambah transaksi keuangan</em></p>
 
-  <img src="public/screenshoot/profilUMKM.png" alt="Profil UMKM" width="800"/>
+  <img src="public/screenshoot/profilUMKM.png" alt="Profil UMKM" width="500"/>
   <p><em>Profil UMKM</em></p>
 
-  <img src="public/screenshoot/cekUMKM.png" alt="Direktori cek UMKM" width="800"/>
+  <img src="public/screenshoot/cekUMKM.png" alt="Direktori cek UMKM" width="500"/>
   <p><em>Direktori cek UMKM</em></p>
 
-  <img src="public/screenshoot/exportExcel.png" alt="Ekspor laporan ke Excel" width="800"/>
+  <img src="public/screenshoot/exportExcel.png" alt="Ekspor laporan ke Excel" width="500"/>
   <p><em>Ekspor laporan ke Excel</em></p>
 
-  <img src="public/screenshoot/shortcutKeyboard.png" alt="Shortcut keyboard" width="800"/>
+  <img src="public/screenshoot/shortcutKeyboard.png" alt="Shortcut keyboard" width="500"/>
   <p><em>Shortcut keyboard</em></p>
 
-  <img src="public/screenshoot/panduan.png" alt="Halaman panduan" width="800"/>
+  <img src="public/screenshoot/panduan.png" alt="Halaman panduan" width="500"/>
   <p><em>Pusat panduan</em></p>
 </div>
 
