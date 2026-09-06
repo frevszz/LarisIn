@@ -212,11 +212,11 @@ export default function LandingPage() {
             </p>
             <div className="pt-2">
               <Show when="signed-out">
-                <SignUpButton>
+                <Link href="/sign-up">
                   <OriginButton className="bg-amber-300  text-black font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer transition-all hard-shadow">
                     Daftar Gratis
                   </OriginButton>
-                </SignUpButton>
+                </Link>
               </Show>
               <Show when="signed-in">
                   <OriginButton

@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['picsum.photos'],
   },
+  allowedDevOrigins: ['laris-in.vercel.app']
 };
 
 export default nextConfig;

@@ -214,11 +214,11 @@ export default function Navbar() {
         {/* User */}
         <div className="border-t border-gray-200 p-3">
           <Show when="signed-out">
-            <SignInButton>
+            <Link href="/sign-in">
               <OriginButton className="bg-amber-300 w-full text-black font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer transition-all hard-shadow">
                 Masuk
               </OriginButton>
-            </SignInButton>
+            </Link>
           </Show>
 
           <Show when="signed-in">
