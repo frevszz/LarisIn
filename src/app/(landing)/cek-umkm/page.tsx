@@ -8,6 +8,7 @@ import PleaseSelect from "@/components/ui/please-select";
 import {
   RiBriefcaseLine,
   RiCupLine,
+  RiLoader4Line,
   RiMapPin2Line,
   RiPaletteLine,
   RiRefreshLine,
@@ -171,6 +172,7 @@ function UmkmCard({
 
 export default function CekUmkmPage() {
   const [umkmList, setUmkmList] = useState<Umkm[]>([]);
+  const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<CategoryKey | "semua">("semua");
   const [city, setCity] = useState("semua");
@@ -178,6 +180,7 @@ export default function CekUmkmPage() {
 
   useEffect(() => {
     async function fetchUmkmData() {
+      setLoading(true);
       try {
         // Direktori publik: semua UMKM yang sudah dipublikasikan (isPublished).
         const res = await fetch("/api/umkm");
@@ -189,6 +192,8 @@ export default function CekUmkmPage() {
       } catch (err) {
         console.error("Gagal mengambil data UMKM dari DB", err);
         setUmkmList([]);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -362,7 +367,14 @@ export default function CekUmkmPage() {
 
           {/* Grid UMKM */}
           <div>
-            {filtered.length > 0 ? (
+            {loading ? (
+              <div className="flex flex-col items-center justify-center gap-3 py-24">
+                <RiLoader4Line className="h-8 w-8 animate-spin text-indigo-500" />
+                <p className="font-mono text-xs tracking-widest uppercase text-slate-500">
+                  Memuat data UMKM…
+                </p>
+              </div>
+            ) : filtered.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
                 {filtered.map((umkm, i) => (
                   <UmkmCard
