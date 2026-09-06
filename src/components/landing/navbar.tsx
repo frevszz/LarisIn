@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { RiMenuLine, RiCloseLine, RiArrowDownSLine } from "@remixicon/react";
 import { usePathname } from "next/navigation";
@@ -28,12 +28,10 @@ export default function NavbarLanding() {
     };
   }, [mobileOpen]);
 
-  // Tutup dropdown saat pindah halaman
   useEffect(() => {
     setHelpOpen(false);
   }, [pathname]);
 
-  // Tutup dropdown saat klik di luar
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       if (helpRef.current && !helpRef.current.contains(e.target as Node)) {
@@ -63,7 +61,7 @@ export default function NavbarLanding() {
           </Link>
         </div>
 
-        {/* NAV LINKS — centered, collapses to hamburger below 880px */}
+        {/* NAV LINKS */}
         <ul className="hidden min-[880px]:flex justify-end items-center gap-7 pr-12">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -132,10 +130,13 @@ export default function NavbarLanding() {
           })}
         </ul>
 
-        {/* RIGHT SIDE: auth buttons always visible + hamburger toggle */}
+        {/* RIGHT SIDE */}
         <div className="flex items-center justify-end gap-3 sm:gap-4">
           <Show when="signed-out">
-            <Link href="/sign-in" className="cursor-pointer text-sm sm:text-base">
+            <Link
+              href="/sign-in"
+              className="cursor-pointer text-sm sm:text-base"
+            >
               Masuk
             </Link>
             <Link href="/sign-up">
@@ -148,7 +149,7 @@ export default function NavbarLanding() {
             <UserButton />
           </Show>
 
-          {/* HAMBURGER — only for nav links, visible under 880px */}
+          {/* HAMBURGER */}
           <button
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
@@ -168,7 +169,7 @@ export default function NavbarLanding() {
         />
       )}
 
-      {/* MOBILE PANEL — nav links only */}
+      {/* MOBILE PANEL */}
       <div
         className={`fixed top-20 bottom-0 right-0 z-50 w-[85vw] max-w-sm min-[880px]:hidden bg-white shadow-lg border-l border-gray-100 flex flex-col p-4 gap-2 overflow-y-auto transform transition-transform duration-300 ease-in ${
           mobileOpen ? "translate-x-0" : "translate-x-full"

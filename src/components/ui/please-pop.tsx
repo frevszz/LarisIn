@@ -1,8 +1,11 @@
-// components/PopUp.tsx
-import { RiCloseCircleLine } from '@remixicon/react';
-import { ReactNode, useCallback, useEffect, useState } from 'react';
+"use client";
 
-type PleasePopStyle = "hard-shadow" | "receipt-edge"
+// components/PopUp.tsx
+import { RiCloseCircleLine } from "@remixicon/react";
+import { createPortal } from "react-dom";
+import { ReactNode, useCallback, useEffect, useState } from "react";
+
+type PleasePopStyle = "hard-shadow" | "receipt-edge";
 
 interface PopUpProps {
   isOpen: boolean;
@@ -12,22 +15,28 @@ interface PopUpProps {
   style?: PleasePopStyle;
 }
 
-export default function PleasePop({ isOpen, onClose, children, title, style = "hard-shadow" }: PopUpProps) {
+export default function PleasePop({
+  isOpen,
+  onClose,
+  children,
+  title,
+  style = "hard-shadow",
+}: PopUpProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
       requestAnimationFrame(() => {
         setIsVisible(true);
       });
     } else {
       // Reset lewat rAF supaya tidak memanggil setState sinkron di dalam effect.
       requestAnimationFrame(() => setIsVisible(false));
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
@@ -53,22 +62,23 @@ export default function PleasePop({ isOpen, onClose, children, title, style = "h
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, handleClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || typeof document === "undefined") return null;
 
-  const popupStyle = style === "hard-shadow" 
-    ? "rounded-2xl border border-black hard-shadow-static" 
-    : "receipt-edge pb-8";
+  const popupStyle =
+    style === "hard-shadow"
+      ? "rounded-2xl border border-black hard-shadow-static"
+      : "receipt-edge pb-8";
 
-  return (
+  return createPortal(
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-opacity duration-200 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-opacity duration-200 ${
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
       onClick={handleClose}
     >
       <div
         className={`bg-white max-w-lg w-full max-h-[90vh] overflow-y-auto ${popupStyle} transition-all duration-200 ${
-          isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+          isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -82,10 +92,9 @@ export default function PleasePop({ isOpen, onClose, children, title, style = "h
             <RiCloseCircleLine className="w-6 h-6" />
           </button>
         </div>
-        <div className="p-4">
-          {children}
-        </div>
+        <div className="p-4">{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
