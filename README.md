@@ -10,7 +10,7 @@
 
 **Submission for ITECHNO CUP 2026 - Web Development**
 
-**By LarisIn**
+**By Team IQ+KETENANGAN**
 
 </div>
 
@@ -34,11 +34,11 @@
 
 ## 👥 Tim Developer
 
-| Nama                      | Peran                               | GitHub                                          |
-| ------------------------- | ----------------------------------- | ----------------------------------------------- |
-| **Farell Dio Rezvianzha** | Project Lead & Full Stack Developer | [frevszz](https://github.com/frevszz)           |
-| **Abner Bagus**           | Frontend Developer                  | [AbnerBgs](https://github.com/AbnerBgs)         |
-| **Farieza Davie Rieawan** | Backend Developer                   | [fariezadavie](https://github.com/fariezadavie) |
+| Nama                      | Peran                               | GitHub                                     |
+| ------------------------- | ----------------------------------- | ------------------------------------------ |
+| **Farell Dio Rezvianzha** | Project Lead & Full Stack Developer | [frevszz](https://github.com/frevszz)      |
+| **Abner Bagus**           | Frontend Developer                  | [AbnerBgs](https://github.com/AbnerBgs)    |
+| **Farieza Davie Rieawan** | Backend Developer                   | [fariezadavie](https://github.com/abcdavk) |
 
 ---
 
