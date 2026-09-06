@@ -26,7 +26,7 @@ export const metadata = {
     siteName: "LarisIn",
     images: [
       {
-        url: "/metadata/og-larisin.png",
+        url: "/og-larisin.png",
         width: 1200,
         height: 630,
         alt: "LarisIn - POS & Manajemen UMKM",
@@ -39,7 +39,7 @@ export const metadata = {
     title: "LarisIn — Platform POS & Manajemen UMKM",
     description:
       "Solusi kasir digital dan manajemen usaha praktis untuk meningkatkan efisiensi bisnis UMKM Anda.",
-    images: ["/metadata/og-larisin.png"],
+    images: ["/og-larisin.png"],
   },
 };
 
