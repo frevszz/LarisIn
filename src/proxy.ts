@@ -12,8 +12,11 @@ export default clerkMiddleware(async (auth, req) => {
   if (isProtectedPage || isProtectedApi) {
     await auth.protect();
   }
-
-  
+},
+{
+  frontendApiProxy: {
+    enabled: true,
+  },
 });
 
 export const config = {
