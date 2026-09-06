@@ -21,12 +21,12 @@
 - [Tentang Proyek](#-tentang-proyek)
 - [Fitur Unggulan](#-fitur-unggulan)
 - [Demo & Screenshot](#-demo--screenshot)
-- [Teknologi](#-teknologi)
-- [Arsitektur Sistem](#-arsitektur-sistem)
-- [Instalasi & Setup](#-instalasi--setup)
+- [Teknologi](#️-teknologi)
+- [Arsitektur Sistem](#️-arsitektur-sistem)
+- [Instalasi & Setup](#instalasi--setup)
 - [Penggunaan](#-penggunaan)
-- [API Documentation](#-api-documentation)
-- [Testing](#-testing)
+- [API](#api)
+- [Validasi](#validasi)
 - [Tim Developer](#-tim-developer)
 - [Lisensi](#-lisensi)
 
@@ -252,7 +252,6 @@ LarisIn/
 │ │ ├── orders/ # API Pesanan  
 │ │ ├── product/ # API Produk (& /id)  
 │ │ ├── profileUmkm/ # API Profil UMKM User  
-│ │ ├── scan/[barcode]/ # API Verifikasi Barcode  
 │ │ ├── target/ # API Target Keuangan  
 │ │ └── umkm/ # API Profil UMKM Publik  
 │ ├── components/ # Reusable UI Components  
@@ -277,7 +276,7 @@ LarisIn/
 
 ---
 
-## Instalasi
+## Instalasi & Setup
 
 ### Prasyarat
 
@@ -347,7 +346,7 @@ npm run lint
 Base URL lokal: `http://localhost:3000/api`  
 Base URL production: `https://larisin.vercel.app/api`
 
-Endpoint yang membutuhkan autentikasi menggunakan sesi Clerk, kecuali `/api/umkm` dan endpoint barcode.
+Endpoint yang membutuhkan autentikasi menggunakan sesi Clerk, kecuali `/api/umkm`.
 
 | Method                  | Endpoint              | Keterangan                                                |
 | ----------------------- | --------------------- | --------------------------------------------------------- |
@@ -358,7 +357,6 @@ Endpoint yang membutuhkan autentikasi menggunakan sesi Clerk, kecuali `/api/umkm
 | `GET`, `PUT`            | `/api/target`         | Mengambil dan mengubah target pendapatan bulanan.         |
 | `GET`, `PUT`            | `/api/profileUmkm`    | Mengambil dan memperbarui profil UMKM.                    |
 | `GET`                   | `/api/umkm`           | Mengambil profil UMKM publik beserta katalog.             |
-| `GET`                   | `/api/scan/[barcode]` | Mengambil data barcode EAN 13 digit dari Open Food Facts. |
 
 ### Contoh Request Pesanan
 
