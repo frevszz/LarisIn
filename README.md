@@ -4,7 +4,7 @@
 
 ### Solusi Manajemen Operasional & Keuangan Cerdas untuk UMKM
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://larisin.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://laris-in.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/frevszz/LarisIn)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
@@ -82,7 +82,7 @@ Banyak pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) masih menghadapi pencatata
 
 ### Live Demo
 
-🔗 **[Kunjungi Website](https://larisin.vercel.app)**
+🔗 **[Kunjungi Website](https://laris-in.vercel.app/)**
 
 ### Screenshot Aplikasi
 
@@ -141,10 +141,6 @@ Banyak pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) masih menghadapi pencatata
   <img src="public/screenshoot/panduan.png" alt="Halaman panduan" width="500"/>
   <p><em>Pusat panduan</em></p>
 </div>
-
-### Video Demo
-
-📹 **[Link Video Demo](https://[URL_VIDEO])** _(opsional)_
 
 ---
 
@@ -245,9 +241,9 @@ LarisIn/
 │ │ │ ├── orders/ # Form Pesanan & Kasir  
 │ │ │ ├── product/ # Manajemen Produk  
 │ │ │ ├── profile-umkm/ # Pengaturan Profil UMKM  
-│ │ │ ├── sales/ # Laporan Penjualan  
-│ │ │ ├── scan/ # Halaman Pemindai Barcode  
-│ │ │ └── stock/ # Inventaris Stok  
+│ │ │ └── sales/ # Laporan Penjualan  
+│ │ │
+│ │ │
 │ │ ├── (landing)/ # Grouping Route Publik  
 │ │ │ ├── cek-umkm/ # Pencarian/Verifikasi UMKM  
 │ │ │ └── help/ # Pusat Bantuan  
@@ -274,10 +270,10 @@ LarisIn/
 ├── .env.example # Template Environment Variables  
 ├── eslint.config.mjs # Konfigurasi Linter  
 ├── next.config.ts # Konfigurasi Next.js  
-| **Manajemen Pesanan & Kasir** | Pembuatan transaksi penjualan dengan pilihan metode pembayaran, riwayat transaksi, dan struk digital. | Mempercepat transaksi dan mengurangi pencatatan manual. |
-| **Pencatatan Keuangan & Analytics** | Ringkasan penjualan kasir, pemasukan, pengeluaran, grafik, dan target pendapatan bulanan. | Membantu pemilik memahami arus kas dan perkembangan omzet. |
-| **Manajemen Stok & Produk** | Pengelolaan produk, harga, kategori, gambar, dan jumlah stok. Stok berkurang otomatis saat penjualan disimpan. | Menjaga data katalog dan inventaris tetap terpusat. |
-| **Profil & Direktori UMKM** | Profil usaha dapat dipublikasikan ke halaman `/cek-umkm` beserta katalog, kontak, lokasi, jam buka, dan informasi lowongan. | Meningkatkan visibilitas serta kredibilitas usaha lokal. |
+├── package.json # Dependencies & script proyek  
+├── postcss.config.mjs # Konfigurasi PostCSS  
+├── prisma7.config.ts # Konfigurasi Prisma 7  
+└── tsconfig.json # Konfigurasi TypeScript
 
 ---
 
@@ -336,7 +332,7 @@ npm run lint
 
 1. **Registrasi/Login**: Buka halaman aplikasi dan tekan tombol _Sign In/Sign Up_ untuk masuk menggunakan akun Clerk.
 2. **Pengelolaan Kasir (`/orders`)**: Masukkan produk ke dalam keranjang belanja, proses pesanan, dan cetak struk pembayaran digital.
-3. **Pencatatan Stok (`/product` & `/stock`)**: Tambah, edit, atau hapus item barang dagangan beserta pemantauan jumlah stok tersisa.
+3. **Pencatatan Stok (`/product`)**: Tambah, edit, atau hapus item barang dagangan beserta pemantauan jumlah stok tersisa.
 
 #### Untuk Admin
 
