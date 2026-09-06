@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import {
+  RiAccountCircle2Line,
   RiArrowRightSLine,
   RiBarcodeBoxLine,
   RiBox3Line,
@@ -10,6 +13,7 @@ import {
   RiStackLine,
   RiStore2Line,
 } from "@remixicon/react";
+import { Show, UserButton, UserProfile, useUser } from "@clerk/react";
 
 const navigationItems = [
   { label: "Dashboard", href: "/dashboard", icon: RiDashboardLine },
@@ -20,6 +24,8 @@ const navigationItems = [
 ];
 
 export default function MorePage() {
+  const { isLoaded, user } = useUser();
+
   return (
     <main className="min-h-screen bg-gray-50">
       <section className="mx-auto max-w-2xl px-4 py-6 pb-24 md:px-8 md:py-8 md:pb-8">
@@ -48,6 +54,50 @@ export default function MorePage() {
           </span>
           <RiArrowRightSLine size={24} />
         </Link>
+
+        <div className="mb-6">
+          <Show when="signed-in">
+            <div
+              role="button"
+              tabIndex={0}
+              className="flex w-full items-center gap-3 rounded-xl bg-amber-300 px-3 py-2 text-black border hard-shadow cursor-pointer transition-all"
+              onClick={(e) => {
+                const target = e.currentTarget.querySelector(
+                  "button",
+                ) as HTMLButtonElement | null;
+
+                target?.click();
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+
+                  const target = e.currentTarget.querySelector(
+                    "button",
+                  ) as HTMLButtonElement | null;
+
+                  target?.click();
+                }
+              }}
+            >
+              <div
+                onClick={(e) => {
+                  // Jangan biarkan click dari UserButton
+                  // diteruskan ke parent
+                  e.stopPropagation();
+                }}
+              >
+                <UserButton />
+              </div>
+
+              {isLoaded && (
+                <span className="truncate text-sm font-medium">
+                  {user?.username ?? user?.firstName ?? "Pengguna"}
+                </span>
+              )}
+            </div>
+          </Show>
+        </div>
 
         <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
           <div className="border-b border-gray-200 px-4 py-3">
