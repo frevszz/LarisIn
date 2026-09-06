@@ -87,7 +87,7 @@ Banyak pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) masih menghadapi pencatata
 ### Screenshot Aplikasi
 
 <div align="center">
-  <img src="public/screenshoot/landing.png" alt="Landing page LarisIn" width="800"/>
+  <img src="public/screenshoot/landing.png" alt="Landing page LarisIn" width="500"/>
   <p><em>Landing page LarisIn</em></p>
 
   <img src="public/screenshoot/loginSistem.png" alt="Halaman login sistem" width="800"/>
