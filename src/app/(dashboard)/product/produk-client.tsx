@@ -314,7 +314,7 @@ export default function ProdukClient({
                       <p className="truncate text-md font-medium text-gray-900">
                         {p.name}
                       </p>
-                      <span className="shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-[12px] font-medium text-gray-600">
+                      <span className="shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-[10px] md:text-[12px] font-medium text-gray-600">
                         {p.category}
                       </span>
                     </div>
@@ -324,7 +324,7 @@ export default function ProdukClient({
                   </div>
 
                   <div className="shrink-0 text-right">
-                    <p className="font-mono text-md font-semibold text-gray-900">
+                    <p className="font-mono text-xs md:text-md font-semibold text-gray-900">
                       {formatPrice(p.price)}
                     </p>
                     <p
