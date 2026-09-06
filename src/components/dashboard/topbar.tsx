@@ -20,7 +20,6 @@ export default function TopbarDashboard() {
   useEffect(() => {
     async function fetchStoreName() {
       try {
-        // PERBAIKAN: Path API disesuaikan dengan nama folder (profileUmkm)
         const res = await fetch("/api/profileUmkm");
         if (res.ok) {
           const data = await res.json();
