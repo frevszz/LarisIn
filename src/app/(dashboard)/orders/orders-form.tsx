@@ -8,6 +8,7 @@ import {
   RiAddLine,
   RiDeleteBinLine,
   RiRefreshLine,
+  RiSubtractLine,
   RiUserLine,
 } from "@remixicon/react";
 
@@ -340,18 +341,38 @@ export default function OrdersForm({
                                 <label className="text-xs text-gray-500">
                                   Jumlah
                                 </label>
-                                <input
-                                  type="number"
-                                  min={1}
-                                  value={item.quantity}
-                                  onChange={(e) =>
-                                    handleQuantityChange(
-                                      item.id,
-                                      Number(e.target.value),
-                                    )
-                                  }
-                                  className="w-16 rounded-md border border-gray-300 px-2 py-1 text-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                />
+                                <div className="flex items-center overflow-hidden rounded-md border border-gray-300">
+                                  <button
+                                    type="button"
+                                    aria-label="Kurangi jumlah produk"
+                                    disabled={item.quantity <= 1}
+                                    onClick={() =>
+                                      handleQuantityChange(
+                                        item.id,
+                                        item.quantity - 1,
+                                      )
+                                    }
+                                    className="flex h-8 w-8 items-center justify-center text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
+                                  >
+                                    <RiSubtractLine size={16} />
+                                  </button>
+                                  <span className="flex h-8 w-8 items-center justify-center border-x border-gray-300 text-sm font-medium text-gray-800">
+                                    {item.quantity}
+                                  </span>
+                                  <button
+                                    type="button"
+                                    aria-label="Tambah jumlah produk"
+                                    onClick={() =>
+                                      handleQuantityChange(
+                                        item.id,
+                                        item.quantity + 1,
+                                      )
+                                    }
+                                    className="flex h-8 w-8 items-center justify-center text-gray-600 transition hover:bg-gray-100"
+                                  >
+                                    <RiAddLine size={16} />
+                                  </button>
+                                </div>
                               </div>
                               {item.price > 0 && (
                                 <span className="font-mono text-sm text-gray-600">
