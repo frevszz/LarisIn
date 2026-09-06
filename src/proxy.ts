@@ -1,4 +1,5 @@
 import { clerkMiddleware } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl;
@@ -10,7 +11,25 @@ export default clerkMiddleware(async (auth, req) => {
     pathname.startsWith('/api') && !pathname.startsWith('/api/umkm');
 
   if (isProtectedPage || isProtectedApi) {
-    await auth.protect();
+    const { isAuthenticated } = await auth();
+
+    if (!isAuthenticated) {
+      if (isProtectedApi) {
+        return NextResponse.json(
+          { error: 'Unauthorized' },
+          { status: 401 }
+        );
+      }
+
+      // Dashboard -> /sign-up
+      const signUpUrl = new URL('/sign-up', req.url);
+      signUpUrl.searchParams.set(
+        'redirect_url',
+        req.nextUrl.href
+      );
+
+      return NextResponse.redirect(signUpUrl);
+    }
   }
 },
 {
