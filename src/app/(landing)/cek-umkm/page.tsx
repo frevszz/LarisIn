@@ -146,15 +146,25 @@ function UmkmCard({
         >
           Lihat Detail
         </OriginButton>
-        <a
-          href={`https://wa.me/${umkm.whatsapp}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Chat ${umkm.name} via WhatsApp`}
-          className="h-11 w-11 shrink-0 rounded-xl border border-black bg-white hard-shadow flex items-center justify-center cursor-pointer hover:bg-emerald-50 transition-colors"
-        >
-          <RiWhatsappLine className="h-5 w-5 text-emerald-600" />
-        </a>
+        {umkm.whatsapp.trim() ? (
+          <a
+            href={`https://wa.me/${umkm.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Chat ${umkm.name} via WhatsApp`}
+            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-black bg-white hard-shadow transition-colors hover:bg-emerald-50"
+          >
+            <RiWhatsappLine className="h-5 w-5 text-emerald-600" />
+          </a>
+        ) : (
+          <span
+            aria-label="Nomor WhatsApp belum tersedia"
+            title="Nomor WhatsApp belum tersedia"
+            className="flex h-11 w-11 shrink-0 cursor-not-allowed items-center justify-center rounded-xl border border-slate-300 bg-slate-100 opacity-50"
+          >
+            <RiWhatsappLine className="h-5 w-5 text-slate-500" />
+          </span>
+        )}
       </div>
     </article>
   );
@@ -533,17 +543,28 @@ export default function CekUmkmPage() {
             </div>
 
             {/* Kontak */}
-            <a
-              href={`https://wa.me/${selected.whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block pt-1"
-            >
-              <OriginButton className="w-full bg-emerald-500 text-white font-medium text-sm h-11 px-4 cursor-pointer hard-shadow flex items-center justify-center gap-2">
+            {selected.whatsapp.trim() ? (
+              <a
+                href={`https://wa.me/${selected.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block pt-1"
+              >
+                <OriginButton className="flex h-11 w-full items-center justify-center gap-2 bg-emerald-500 px-4 text-sm font-medium text-white hard-shadow cursor-pointer">
+                  <RiWhatsappLine className="h-4 w-4" />
+                  Chat via WhatsApp
+                </OriginButton>
+              </a>
+            ) : (
+              <OriginButton
+                disabled
+                aria-label="Nomor WhatsApp belum tersedia"
+                className="mt-1 flex h-11 w-full cursor-not-allowed items-center justify-center gap-2 bg-slate-300 px-4 text-sm font-medium text-slate-500 opacity-70"
+              >
                 <RiWhatsappLine className="h-4 w-4" />
-                Chat via WhatsApp
+                WhatsApp belum tersedia
               </OriginButton>
-            </a>
+            )}
           </div>
         )}
       </PleasePop>
