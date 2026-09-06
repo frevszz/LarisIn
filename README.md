@@ -292,14 +292,13 @@ LarisIn/
 
 ### Langkah Instalasi
 
-  <img src="public/img/landing/explore.png" alt="Landing page dan direktori UMKM" width="800"/>
 git clone [https://github.com/frevszz/LarisIn.git](https://github.com/frevszz/LarisIn.git)  
-cd LarisIn  
-  <img src="public/img/landing/dashboard.jpg" alt="Dashboard penjualan" width="800"/>
+cd LarisIn
+
 #### 2️⃣ Install Dependencies
-npm install  
-  <img src="public/img/landing/owner.jpg" alt="Alur penggunaan untuk pemilik UMKM" width="800"/>
-  <p><em>Alur pemilik UMKM - Pengelolaan profil dan operasional usaha</em></p>
+
+npm install
+
 Buat file `.env` di root directory:
 
 DATABASE_URL="postgresql://user:password@localhost:5432/mydb"  
