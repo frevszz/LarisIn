@@ -25,10 +25,6 @@ import {
   RiAddCircleLine,
 } from "@remixicon/react";
 
-/* ------------------------------------------------------------------ */
-/* Tipe Data                                                          */
-/* ------------------------------------------------------------------ */
-
 type CategoryKey =
   | "warung"
   | "kedai"
@@ -87,10 +83,6 @@ const formatPrice = (price: number) =>
     minimumFractionDigits: 0,
   }).format(price);
 
-/* ------------------------------------------------------------------ */
-/* Komponen Kartu UMKM                                                */
-/* ------------------------------------------------------------------ */
-
 function UmkmCard({
   umkm,
   index,
@@ -105,7 +97,6 @@ function UmkmCard({
 
   return (
     <article className="group bg-white border border-black rounded-2xl hard-shadow-static overflow-hidden flex flex-col h-full">
-      {/* Header kartu */}
       <div className="flex items-center justify-between px-5 pt-4">
         <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500 border border-black/30 bg-slate-50 px-2 py-0.5 rounded">
           {meta.code} · {String(index + 1).padStart(3, "0")}
@@ -116,7 +107,6 @@ function UmkmCard({
         </span>
       </div>
 
-      {/* Isi kartu */}
       <div className="px-5 pt-3 pb-5 flex-1">
         <div className="flex items-center gap-2">
           <span className="h-8 w-8 shrink-0 rounded-lg bg-indigo-50 border border-black/10 flex items-center justify-center">
@@ -149,7 +139,6 @@ function UmkmCard({
         </div>
       </div>
 
-      {/* Aksi kartu */}
       <div className="px-5 pb-5 flex gap-2">
         <OriginButton
           onClick={() => onDetail(umkm)}
@@ -170,10 +159,6 @@ function UmkmCard({
     </article>
   );
 }
-
-/* ------------------------------------------------------------------ */
-/* Halaman Utama Cek UMKM                                             */
-/* ------------------------------------------------------------------ */
 
 export default function CekUmkmPage() {
   const [umkmList, setUmkmList] = useState<Umkm[]>([]);
@@ -209,7 +194,7 @@ export default function CekUmkmPage() {
         .sort()
         .map((c) => ({ value: c, label: c })),
     ],
-    [umkmList]
+    [umkmList],
   );
 
   const stats = useMemo(
@@ -219,14 +204,13 @@ export default function CekUmkmPage() {
       products: umkmList.reduce((sum, u) => sum + (u.products?.length || 0), 0),
       jobs: umkmList.reduce((sum, u) => sum + (u.jobs?.length || 0), 0),
     }),
-    [umkmList]
+    [umkmList],
   );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return umkmList.filter((u) => {
-      const matchCategory =
-        category === "semua" || u.category === category;
+      const matchCategory = category === "semua" || u.category === category;
       const matchCity = city === "semua" || u.city === city;
       const metaLabel = CATEGORY_META[u.category]?.label || "";
       const matchQuery =
@@ -257,7 +241,6 @@ export default function CekUmkmPage() {
 
   return (
     <div className="relative top-0 z-0 bg-white text-slate-900 flex flex-col font-sans">
-      {/* 1. HERO + PENCARIAN */}
       <PleaseReveal>
         <section className="mx-auto px-6 pt-14 pb-12 w-full border-b border-slate-200 bg-white">
           <div className="max-w-6xl mx-auto text-center">
@@ -368,7 +351,7 @@ export default function CekUmkmPage() {
             </div>
           </div>
 
-          {/* Grid UMKM / Empty state */}
+          {/* Grid UMKM */}
           <div>
             {filtered.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
@@ -384,7 +367,9 @@ export default function CekUmkmPage() {
             ) : (
               <div className="max-w-md mx-auto text-center py-16 px-6 mb-16 bg-white border border-black rounded-2xl hard-shadow-static">
                 <RiUserLocationLine className="h-10 w-10 text-indigo-500 mx-auto" />
-                <h3 className="font-bold mt-4">Belum Ada Data UMKM Terdeploy</h3>
+                <h3 className="font-bold mt-4">
+                  Belum Ada Data UMKM Terdeploy
+                </h3>
                 <p className="text-sm text-slate-600 mt-2">
                   {hasActiveFilter
                     ? "Tidak ada UMKM yang cocok dengan filter kamu."
@@ -421,8 +406,8 @@ export default function CekUmkmPage() {
               Daftarkan sekarang, Gratis
             </h2>
             <p className="text-md max-w-md mx-auto">
-              Tampilkan usahamu di direktori ini dan kelola pencatatan
-              penjualan dengan lebih gampang.
+              Tampilkan usahamu di direktori ini dan kelola pencatatan penjualan
+              dengan lebih gampang.
             </p>
             <div className="pt-2">
               <OriginButton
@@ -464,7 +449,9 @@ export default function CekUmkmPage() {
               </p>
               <p className="flex items-center gap-2">
                 <RiTimeLine className="h-4 w-4 shrink-0 text-slate-400" />
-                {selected.openHours ? `Buka ${selected.openHours}` : "Jam operasional belum diisi"}
+                {selected.openHours
+                  ? `Buka ${selected.openHours}`
+                  : "Jam operasional belum diisi"}
               </p>
             </div>
 
@@ -510,7 +497,9 @@ export default function CekUmkmPage() {
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-slate-500 italic">Belum ada produk.</p>
+                <p className="text-sm text-slate-500 italic">
+                  Belum ada produk.
+                </p>
               )}
             </div>
 
@@ -526,15 +515,12 @@ export default function CekUmkmPage() {
                       key={idx}
                       className="flex items-center justify-between gap-3 border border-black/20 rounded-xl px-4 py-2.5 text-sm bg-white"
                     >
-                      <span className="flex items-center gap-2 text-slate-700 truncate">
+                      <span className="flex min-w-0 items-center gap-2 text-slate-700">
                         <RiBriefcaseLine className="h-4 w-4 shrink-0 text-indigo-500" />
                         <span className="truncate font-medium">{j.title}</span>
-                        <span className="font-mono text-[10px] uppercase tracking-widest border border-black/20 bg-slate-50 px-1.5 py-0.5 rounded shrink-0">
-                          {j.type}
-                        </span>
                       </span>
-                      <span className="font-mono text-xs font-semibold text-indigo-600 shrink-0">
-                        {j.salary}
+                      <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest border border-black/20 bg-slate-50 px-1.5 py-0.5 rounded">
+                        {j.type}
                       </span>
                     </li>
                   ))}
