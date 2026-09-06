@@ -208,24 +208,29 @@ Version Ctrl : Git & GitHub
 
 ### System Architecture
 
+```
 [Client / Browser] <---> [Next.js App Router (Vercel)] <---> [Clerk Auth Service]
-|
-v
+      |
+      v
 [Prisma ORM v7]
-|
-v
+      |
+      v
 [PostgreSQL Database]
+```
 
 ### Database Schema
 
+```
 [User / Clerk ID] ──1:1──> [ProfileUMKM] ──1:N──> [Product]
-| |
+|                    |
 └──1:N──> [Order] ───┘ (Items)
 |
 └──1:N──> [FinanceRecord / Target]
+```
 
 ### Folder Structure
 
+```
 LarisIn/  
 ├── prisma/ # Konfigurasi Skema & Migrasi Database  
 │ ├── migrations/ # History migrasi database SQL  
@@ -273,6 +278,7 @@ LarisIn/
 ├── postcss.config.mjs # Konfigurasi PostCSS  
 ├── prisma7.config.ts # Konfigurasi Prisma 7  
 └── tsconfig.json # Konfigurasi TypeScript
+```
 
 ---
 
@@ -292,24 +298,33 @@ cd LarisIn
 
 #### 2️⃣ Install Dependencies
 
+```
 npm install
+```
 
 Buat file `.env` di root directory:
 
+```
 DATABASE_URL="postgresql://user:password@localhost:5432/mydb"  
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=  
 CLERK_SECRET_KEY=  
 NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/dashboard  
 NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/dashboard
+```
 
 #### 4️⃣ Setup Database
 
 Framework : Next.js 16 (App Router)  
+```
 npx prisma migrate dev
+npx prisma generate
+```
 
 #### 5️⃣ Run Development Server
 
+```
 npm run dev
+```
 
 Aplikasi akan berjalan di `http://localhost:3000`
 
@@ -319,13 +334,16 @@ Aplikasi akan berjalan di `http://localhost:3000`
 
 ### Menjalankan Aplikasi
 
+```
 npm run dev  
 npm run build  
 npm run start  
 npm run test  
 npm run lint
+```
 
-| **Next.js 16 (App Router)** | Menyediakan routing, rendering server, dan API Route Handlers dalam satu aplikasi full-stack. |
+> **Next.js 16 (App Router)**
+> Menyediakan routing, rendering server, dan API Route Handlers dalam satu aplikasi full-stack.
 
 #### Untuk Pengguna Umum
 
